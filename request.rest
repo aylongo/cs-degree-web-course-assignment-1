@@ -1,0 +1,59 @@
+### Create a new post
+POST http://localhost:8000/post
+Content-Type: application/json
+
+{
+  "title": "First post",
+  "content": "Hello world",
+  "sender": "aylon"
+}
+
+### Get all posts
+GET http://localhost:8000/post
+
+### Get posts by sender
+GET http://localhost:8000/post?sender=aylon
+
+### Get a post by id
+GET http://localhost:8000/post/69713ce11d57e956295bdae0
+
+### Update a post (replace)
+PUT http://localhost:8000/post/69713ce11d57e956295bdae0
+Content-Type: application/json
+
+{
+  "title": "Updated title",
+  "content": "Hello",
+  "sender": "aylon"
+}
+
+### Create a comment
+POST http://localhost:8000/comment
+Content-Type: application/json
+
+{
+  "post": "69713ce11d57e956295bdae0",
+  "content": "Nice post",
+  "sender": "rom"
+}
+
+### Get comments for a post
+GET http://localhost:8000/post/69713ce11d57e956295bdae0/comments
+
+### Get all comments
+GET http://localhost:8000/comment
+
+### Get a comment by id
+GET http://localhost:8000/comment/69713d321d57e956295bdae7
+
+### Update a comment
+PUT http://localhost:8000/comment/69713d321d57e956295bdae7
+Content-Type: application/json
+
+{
+  "content": "Edited comment",
+  "sender": "rom"
+}
+
+### Delete a comment
+DELETE http://localhost:8000/comment/69713d321d57e956295bdae7
